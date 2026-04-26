@@ -3,8 +3,8 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import {
-  Map, PhoneCall, FileSignature, Target, ArrowRight, CheckCircle2,
-  Building2, MapPin, ExternalLink, FileText, Sparkles
+  UserCircle, PhoneCall, TrendingUp, ArrowRight, CheckCircle2,
+  MapPin, ExternalLink, FileText, Sparkles
 } from "lucide-react"
 
 const HUMANLY_NAVY = "#0F1F3D"
@@ -14,39 +14,30 @@ const PROPOSAL_URL = "https://nextautomation.us/proposals/humanly"
 const systems = [
   {
     href: "/deal-finder",
-    title: "Land Intelligence",
-    subtitle: "Daily parcel scan across FL MSAs",
-    icon: Map,
-    description: "Daily scraping of 12+ Florida counties. Aggregate tract detection (Marks Family 3-parcel example you described). AI scoring against your criteria. Utility district lookup. Self-healing scrapers.",
-    highlights: ["12+ FL counties", "Aggregate detection · 90ac Marks, 140ac Patterson", "AI scored 0-100 with distress signals"],
-    cta: "Open Land Intelligence"
+    title: "Entity Owner Resolution",
+    subtitle: "LLC / Trust / Holding Co. → human",
+    icon: UserCircle,
+    description: "Pull from re-grid (your stack stays your stack). Walk Sunbiz, DE corp registry, OpenCorporates, beneficial-owner filings. Group every parcel that traces to the same human into one master-plan-eligible aggregate. Output: phone-ready decision-maker cards.",
+    highlights: ["50-state corp-registry walks", "Beneficial-owner aggregate grouping (3 LLCs → 1 person → 180ac)", "Decision-maker contact cards feeding System 2"],
+    cta: "Open Entity Resolution"
   },
   {
     href: "/outreach",
-    title: "Skip Trace & AI Outreach",
-    subtitle: "3-source + VAPI voice",
+    title: "Skip Trace + VAPI Cold Calling",
+    subtitle: "3-source trace · AI voice at scale",
     icon: PhoneCall,
-    description: "Layered skip tracing across WhitePages + BeenVerified + TruePeopleSearch (the three sources you named). Then VAPI AI cold calls with live transcription, pricing signals, and auto-scheduled appointments with Mitch.",
-    highlights: ["92% skip trace hit rate", "Full call transcripts + signal capture", "Appointments auto-booked on your calendar"],
-    cta: "Open Skip Trace"
+    description: "Layered skip tracing across WhitePages + BeenVerified + TruePeopleSearch, cross-referenced with confidence scoring. VAPI then calls each resolved owner with the deal context loaded. Live transcription, pricing / timeline / probate signal capture, appointments booked on your team's calendar.",
+    highlights: ["91% reach rate on cross-confirmed numbers", "VAPI calls loaded with entity tree + master-plan thesis", "Appointments auto-booked with full pre-call brief"],
+    cta: "Open Outreach"
   },
   {
     href: "/loi-generator",
-    title: "LOI Engine",
-    subtitle: "Flat · Seller Carry · Phased",
-    icon: FileSignature,
-    description: "All three deal structures from the call — flat cash, seller carry note (configurable down %, term, rate, balloon), phased closing (2-5 phases). Auto-populated from deal record, PDF export, DocuSign tracking.",
-    highlights: ["3 deal structures", "Seller carry: down / term / rate / balloon", "Phased: 2-5 milestones"],
-    cta: "Open LOI Engine"
-  },
-  {
-    href: "/pipeline",
-    title: "Deal Pipeline",
-    subtitle: "Sourced → Executed",
-    icon: Target,
-    description: "The CRM baseline you asked for. Six stages, activity timeline per deal, next-action queue with the 5 priorities for your day, weighted pipeline value, stale-deal alerts.",
-    highlights: ["6-stage kanban view", "Activity timeline per deal", "Weighted pipeline + stale alerts"],
-    cta: "Open Pipeline"
+    title: "Supply / Demand Intelligence",
+    subtitle: "BFR · Multifamily · Modular",
+    icon: TrendingUp,
+    description: "Per-MSA demand surface across the three housing typologies Humanly operates in. Tract-level fit scoring (BFR-fit / multifamily-fit / modular-fit). Phased feasibility model for master-plan deals. Outputs ship into your scoring engine as features — zero refactor on your side.",
+    highlights: ["MSA × typology demand scores (rent, absorption, formation)", "Tract-level fit scoring on every 100-500 ac aggregate", "Phased feasibility model for mixed master-plans"],
+    cta: "Open Demand Intelligence"
   },
 ]
 
@@ -75,7 +66,7 @@ export default function LandingPage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: HUMANLY_GOLD }} />
                 <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: HUMANLY_GOLD }} />
               </span>
-              <span className="uppercase tracking-widest">Welcome Mitch · Interactive Demo Live</span>
+              <span className="uppercase tracking-widest">Welcome Max · Interactive Demo Live</span>
             </div>
           </motion.div>
 
@@ -97,8 +88,8 @@ export default function LandingPage() {
               className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6 tracking-tight leading-[1.05]"
               style={{ color: HUMANLY_NAVY }}
             >
-              Off-Market Land<br />
-              <span style={{ color: HUMANLY_GOLD }}>Acquisition System</span>
+              The Owner Contact +<br />
+              <span style={{ color: HUMANLY_GOLD }}>Outreach + Demand Layer</span>
             </motion.h1>
 
             <motion.p
@@ -107,7 +98,7 @@ export default function LandingPage() {
               transition={{ delay: 0.25 }}
               className="text-base md:text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
             >
-              The system you described on April 13 — sourcing vacant land across Florida MSAs, detecting aggregate tracts, skip tracing owners, running AI cold calls, generating LOIs, and tracking every deal in one pipeline.
+              The three modules from the April 17 call — entity owner resolution for raw-land LLCs and trusts, VAPI cold calling at scale, and BFR / multifamily / modular demand intelligence. Built to plug into the platform Humanly already runs.
             </motion.p>
 
             <motion.div
@@ -122,7 +113,7 @@ export default function LandingPage() {
                 style={{ background: HUMANLY_NAVY, color: "#fff", boxShadow: `0 8px 24px ${HUMANLY_NAVY}25` }}
               >
                 <Sparkles className="w-4 h-4" style={{ color: HUMANLY_GOLD }} />
-                Start with Land Intelligence
+                Start with Entity Resolution
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
@@ -143,13 +134,13 @@ export default function LandingPage() {
             >
               <span className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: HUMANLY_GOLD }} />
-                50 to 300 acres
+                100 to 500 acres
               </span>
               <span className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-gray-400" />
-                Jacksonville · Fort Myers · Tampa · East Coast FL
+                Multi-state · master-plan tracts
               </span>
-              <span>4-week build</span>
+              <span>4-week surgical build</span>
             </motion.div>
           </div>
         </div>
@@ -166,12 +157,12 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <p className="text-xs uppercase tracking-[0.25em] font-bold mb-3" style={{ color: HUMANLY_GOLD }}>Four modules · one coherent CRM</p>
+            <p className="text-xs uppercase tracking-[0.25em] font-bold mb-3" style={{ color: HUMANLY_GOLD }}>Three modules · plugs into your stack</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3" style={{ color: HUMANLY_NAVY }}>
               Click any module. Everything is live.
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              You said &ldquo;it&apos;s all kind of a flow coherent process, the baseline is always a CRM.&rdquo; These four modules feed each other — land intelligence scores go into outreach, outreach appointments attach to LOI drafts, LOIs advance the pipeline.
+              Re-grid stays your parcel source. Your scoring engine stays your scorer. These three modules feed each other and feed back into your existing platform — entity resolution surfaces decision-makers, VAPI calls them at scale, demand intelligence tells you which housing typology fits the tract.
             </p>
           </motion.div>
 
@@ -246,7 +237,7 @@ export default function LandingPage() {
                 Ready to talk pricing & timeline?
               </h3>
               <p className="text-white/75 max-w-xl mx-auto mb-6 leading-relaxed">
-                Full 4-week build plan, investment details, Safari Ventures case study, and next steps — all in the proposal.
+                Full 4-week build plan, $7,500 fixed implementation fee, retainer options, and the Safari Ventures architecture proof — all in the proposal.
               </p>
               <a
                 href={PROPOSAL_URL}
@@ -270,9 +261,9 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
           <div>
             <p>
-              Interactive demo for <span className="font-semibold text-white">Mitch Gonzalez · Humanly</span>
+              Interactive demo for <span className="font-semibold text-white">Max & Mitch · Humanly</span>
             </p>
-            <p style={{ color: "rgba(255,255,255,0.5)" }}>Data simulated for demo purposes · FL MSA-ready architecture</p>
+            <p style={{ color: "rgba(255,255,255,0.5)" }}>Data simulated for demo purposes · multi-state · master-plan-ready architecture</p>
           </div>
           <div className="text-right">
             <p>

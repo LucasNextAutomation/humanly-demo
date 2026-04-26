@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Map, PhoneCall, FileSignature, Target, Menu, X, Building2, FileText } from "lucide-react"
+import { UserCircle, PhoneCall, TrendingUp, Menu, X, Building2, FileText } from "lucide-react"
 
 const HUMANLY_NAVY = "#0F1F3D"
 const HUMANLY_GOLD = "#C9A96E"
@@ -11,10 +11,9 @@ const PROPOSAL_URL = "https://nextautomation.us/proposals/humanly"
 
 const navItems = [
   { href: "/", label: "Overview" },
-  { href: "/deal-finder", label: "Deal Finder", icon: Map },
-  { href: "/outreach", label: "Skip Trace & Outreach", icon: PhoneCall },
-  { href: "/loi-generator", label: "LOI Generator", icon: FileSignature },
-  { href: "/pipeline", label: "Pipeline", icon: Target },
+  { href: "/deal-finder", label: "Entity Resolution", icon: UserCircle },
+  { href: "/outreach", label: "Skip Trace + VAPI", icon: PhoneCall },
+  { href: "/loi-generator", label: "Demand Intelligence", icon: TrendingUp },
 ]
 
 export default function Navbar() {
@@ -31,7 +30,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block leading-tight">
               <span className="block text-sm font-semibold tracking-tight" style={{ color: HUMANLY_NAVY }}>Humanly</span>
-              <span className="block text-[10px] uppercase tracking-wider" style={{ color: HUMANLY_GOLD }}>Land Intelligence · Demo</span>
+              <span className="block text-[10px] uppercase tracking-wider" style={{ color: HUMANLY_GOLD }}>Owner + Outreach Layer · Demo</span>
             </div>
           </Link>
 
