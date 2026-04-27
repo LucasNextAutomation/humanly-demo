@@ -9,7 +9,7 @@ const GOLD = "#C9A96E"
 const BG = "#FAFAF8"
 
 const PROPOSAL_URL = "https://nextautomation.us/proposals/humanly"
-const PAY_URL = "https://buy.stripe.com/5kQ7sL2gefGJ7jm6fJfMA1j"
+const PAY_URL = "https://buy.stripe.com/eVq9AT7Ay3Y17jm7jNfMA1k"
 const BOOK_URL = "https://book.nextautomation.us"
 
 const easing = [0.22, 1, 0.36, 1] as [number, number, number, number]
@@ -36,7 +36,7 @@ const MODULES = [
     title: "Owner + Contact Data Feed",
     blurb: "Re-grid LLC name → resolved human → verified phone, written into your scoring DB.",
     bullets: ["Sunbiz SFTP + state SoS walks", "BatchData skip trace + Ekata verify", "CSV / API / Postgres write"],
-    status: "Mandatory",
+    status: "Included",
   },
   {
     letter: "B",
@@ -44,7 +44,7 @@ const MODULES = [
     title: "Tract-Level Typology Fit",
     blurb: "BFR / multifamily / modular fit per tract on data Humanly does not already own.",
     bullets: ["BLS + Census BPS + ZORI + ATTOM", "Per-tract fit score, auditable", "Drift alerts on jobs / rent / permits"],
-    status: "Mandatory",
+    status: "Included",
   },
   {
     letter: "C",
@@ -52,7 +52,7 @@ const MODULES = [
     title: "AI Voice Concierge",
     blurb: "VAPI calls only on numbers that already gave timestamped consent through an opt-in funnel.",
     bullets: ["Direct-mail QR opt-in → consent row", "Disclosure, recording, DNC scrub built in", "No PEWC, no dial — hard gate"],
-    status: "Optional add-on",
+    status: "Included",
   },
 ]
 
@@ -83,7 +83,7 @@ export default function Landing() {
               <span style={{ color: GOLD }}>Demand Layer</span>
             </h1>
             <p className="text-lg md:text-xl max-w-2xl leading-relaxed mb-10" style={{ color: `${NAVY}AA` }}>
-              Two modules feed Humanly&apos;s existing scoring stack. One optional voice layer, only on opt-in. 4-week build, plugged in to what you already run.
+              Three modules, $10,000 flat. Owner data feed, tract-level demand intelligence, and PEWC-gated voice layer. 4-week build, plugged into what you already run.
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -184,7 +184,7 @@ export default function Landing() {
           >
             <p className="text-[11px] font-semibold tracking-[0.25em] uppercase mb-3" style={{ color: GOLD }}>The modules</p>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight" style={{ color: NAVY }}>
-              Two mandatory. One optional. All feed your stack.
+              All three included. Flat $10K, plugged into your stack.
             </h2>
           </motion.div>
 
@@ -219,9 +219,8 @@ export default function Landing() {
                       <span
                         className="text-[10px] font-semibold tracking-[0.15em] uppercase px-2 py-1 rounded-full"
                         style={{
-                          background: m.status === "Mandatory" ? `${GOLD}15` : "#fff",
-                          color: m.status === "Mandatory" ? NAVY : `${NAVY}80`,
-                          border: m.status === "Optional add-on" ? `1px solid ${NAVY}15` : "none",
+                          background: `${GOLD}15`,
+                          color: NAVY,
                         }}
                       >
                         {m.status}
@@ -317,7 +316,7 @@ export default function Landing() {
                 className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-md text-[13px] font-semibold transition-all hover:opacity-95"
                 style={{ background: GOLD, color: NAVY }}
               >
-                Pay deposit ($3,750)
+                Pay deposit ($5,000)
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
               <a

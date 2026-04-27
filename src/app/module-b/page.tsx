@@ -91,7 +91,7 @@ export default function ModuleB() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-semibold" style={{ background: NAVY, color: GOLD }}>B</div>
             <span className="text-[10px] font-semibold tracking-[0.2em] uppercase px-2 py-1 rounded-full" style={{ background: `${GOLD}15`, color: NAVY }}>
-              Mandatory
+              Included
             </span>
           </div>
 

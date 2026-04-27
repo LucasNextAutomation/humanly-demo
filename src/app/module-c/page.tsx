@@ -91,8 +91,8 @@ export default function ModuleC() {
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: easing }}>
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-semibold" style={{ background: NAVY, color: GOLD }}>C</div>
-            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase px-2 py-1 rounded-full" style={{ background: "#fff", color: `${NAVY}80`, border: `1px solid ${NAVY}15` }}>
-              Optional add-on · +$3,500
+            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase px-2 py-1 rounded-full" style={{ background: `${GOLD}15`, color: NAVY }}>
+              Included
             </span>
           </div>
 

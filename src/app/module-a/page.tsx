@@ -97,7 +97,7 @@ export default function ModuleA() {
               A
             </div>
             <span className="text-[10px] font-semibold tracking-[0.2em] uppercase px-2 py-1 rounded-full" style={{ background: `${GOLD}15`, color: NAVY }}>
-              Mandatory
+              Included
             </span>
           </div>
 
