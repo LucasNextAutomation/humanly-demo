@@ -11,9 +11,9 @@ const PROPOSAL_URL = "https://nextautomation.us/proposals/humanly"
 
 const navItems = [
   { href: "/", label: "Overview" },
-  { href: "/deal-finder", label: "Entity Resolution", icon: UserCircle },
-  { href: "/outreach", label: "Skip Trace + VAPI", icon: PhoneCall },
-  { href: "/loi-generator", label: "Demand Intelligence", icon: TrendingUp },
+  { href: "/deal-finder", label: "Module A — Owner Feed", icon: UserCircle },
+  { href: "/loi-generator", label: "Module B — Typology Fit", icon: TrendingUp },
+  { href: "/outreach", label: "Module C — Voice (PEWC)", icon: PhoneCall },
 ]
 
 export default function Navbar() {

@@ -14,30 +14,30 @@ const PROPOSAL_URL = "https://nextautomation.us/proposals/humanly"
 const systems = [
   {
     href: "/deal-finder",
-    title: "Entity Owner Resolution",
-    subtitle: "LLC / Trust / Holding Co. → human",
+    title: "Module A — Owner + Contact Data Feed",
+    subtitle: "LLC → human + verified phone, into your stack",
     icon: UserCircle,
-    description: "Pull from re-grid (your stack stays your stack). Walk Sunbiz, DE corp registry, OpenCorporates, beneficial-owner filings. Group every parcel that traces to the same human into one master-plan-eligible aggregate. Output: phone-ready decision-maker cards.",
-    highlights: ["50-state corp-registry walks", "Beneficial-owner aggregate grouping (3 LLCs → 1 person → 180ac)", "Decision-maker contact cards feeding System 2"],
-    cta: "Open Entity Resolution"
-  },
-  {
-    href: "/outreach",
-    title: "Skip Trace + VAPI Cold Calling",
-    subtitle: "3-source trace · AI voice at scale",
-    icon: PhoneCall,
-    description: "Layered skip tracing across WhitePages + BeenVerified + TruePeopleSearch, cross-referenced with confidence scoring. VAPI then calls each resolved owner with the deal context loaded. Live transcription, pricing / timeline / probate signal capture, appointments booked on your team's calendar.",
-    highlights: ["91% reach rate on cross-confirmed numbers", "VAPI calls loaded with entity tree + master-plan thesis", "Appointments auto-booked with full pre-call brief"],
-    cta: "Open Outreach"
+    description: "Re-grid LLC name → human via Sunbiz SFTP + state SoS walks (FL, TX, CA, NY, others) + OpenCorporates Starter. BatchData skip trace + Ekata phone verification. CSV / API / Postgres write into your scoring DB. We do not promise to crack DE / WY / NV LLCs — those are deliberately opaque.",
+    highlights: ["Honest blended hit rate 40-50% on a 100-500 ac entity-owned book", "BatchData primary, DNC-flagged + litigator-scrubbed", "Output: feature columns into your existing scoring engine"],
+    cta: "Open Module A"
   },
   {
     href: "/loi-generator",
-    title: "Supply / Demand Intelligence",
-    subtitle: "BFR · Multifamily · Modular",
+    title: "Module B — Tract-Level Typology Fit",
+    subtitle: "BFR · multifamily · modular fit per tract",
     icon: TrendingUp,
-    description: "Per-MSA demand surface across the three housing typologies Humanly operates in. Tract-level fit scoring (BFR-fit / multifamily-fit / modular-fit). Phased feasibility model for master-plan deals. Outputs ship into your scoring engine as features — zero refactor on your side.",
-    highlights: ["MSA × typology demand scores (rent, absorption, formation)", "Tract-level fit scoring on every 100-500 ac aggregate", "Phased feasibility model for mixed master-plans"],
-    cta: "Open Demand Intelligence"
+    description: "Public + light-paid data layer (BLS QCEW + Census BPS + ZORI + ATTOM + HouseCanary). Per-MSA demand surface and per-tract fit score across the three typologies you operate in. Drift alerts when permit velocity / rent growth / jobs cross your thresholds. NOT a CoStar replay — out-of-scope is asset-level rent + occupancy comps.",
+    highlights: ["Total data cost ~$200-$400/mo, not a $20K/yr CoStar license", "Auditable scoring: every input, every weight, in the export", "Drift / threshold alerts nobody at the CoStar tier ships"],
+    cta: "Open Module B"
+  },
+  {
+    href: "/outreach",
+    title: "Module C — AI Voice Concierge (optional)",
+    subtitle: "PEWC-gated only · opt-in funnel feeds it",
+    icon: PhoneCall,
+    description: "AI voice on numbers that gave timestamped prior express written consent through a separate touch (direct-mail QR opt-in or LinkedIn opt-in). We do NOT skip-trace-then-cold-AI-dial — TCPA + state mini-TCPAs make that a $500-$1,500-per-call litigation magnet. Opt-in lists also convert 5-10x cold lists, so this is better business too.",
+    highlights: ["No PEWC row, no dial — hard gate at the dialer", "AI + recording disclosure script line 1 (CA / FL / IL / MA / WA)", "Twilio Trust Hub + STIR/SHAKEN A-attestation, 7-yr audit log"],
+    cta: "Open Module C"
   },
 ]
 
@@ -88,8 +88,8 @@ export default function LandingPage() {
               className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6 tracking-tight leading-[1.05]"
               style={{ color: HUMANLY_NAVY }}
             >
-              The Owner Contact +<br />
-              <span style={{ color: HUMANLY_GOLD }}>Outreach + Demand Layer</span>
+              The Owner +<br />
+              <span style={{ color: HUMANLY_GOLD }}>Demand Layer for Humanly</span>
             </motion.h1>
 
             <motion.p
@@ -98,7 +98,7 @@ export default function LandingPage() {
               transition={{ delay: 0.25 }}
               className="text-base md:text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
             >
-              The three modules from the April 17 call — entity owner resolution for raw-land LLCs and trusts, VAPI cold calling at scale, and BFR / multifamily / modular demand intelligence. Built to plug into the platform Humanly already runs.
+              Two modules mandatory, one optional. Entity owner data feed, tract-level BFR / multifamily / modular fit, and a PEWC-gated AI voice concierge if you want it. Built to plug into the platform Humanly already runs.
             </motion.p>
 
             <motion.div
@@ -113,7 +113,7 @@ export default function LandingPage() {
                 style={{ background: HUMANLY_NAVY, color: "#fff", boxShadow: `0 8px 24px ${HUMANLY_NAVY}25` }}
               >
                 <Sparkles className="w-4 h-4" style={{ color: HUMANLY_GOLD }} />
-                Start with Entity Resolution
+                Start with Module A
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
@@ -157,12 +157,12 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <p className="text-xs uppercase tracking-[0.25em] font-bold mb-3" style={{ color: HUMANLY_GOLD }}>Three modules · plugs into your stack</p>
+            <p className="text-xs uppercase tracking-[0.25em] font-bold mb-3" style={{ color: HUMANLY_GOLD }}>Two modules mandatory · one optional</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3" style={{ color: HUMANLY_NAVY }}>
               Click any module. Everything is live.
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              Re-grid stays your parcel source. Your scoring engine stays your scorer. These three modules feed each other and feed back into your existing platform — entity resolution surfaces decision-makers, VAPI calls them at scale, demand intelligence tells you which housing typology fits the tract.
+              Re-grid stays your parcel source. Your scoring engine stays your scorer. Module A delivers resolved owners + verified phones into your stack. Module B adds tract-level BFR / MF / modular fit. Module C is the AI voice layer — opt-in-gated, only if you want it.
             </p>
           </motion.div>
 
@@ -237,7 +237,7 @@ export default function LandingPage() {
                 Ready to talk pricing & timeline?
               </h3>
               <p className="text-white/75 max-w-xl mx-auto mb-6 leading-relaxed">
-                Full 4-week build plan, $7,500 fixed implementation fee, retainer options, and the Safari Ventures architecture proof — all in the proposal.
+                Full 4-week build plan, $15,000 implementation fee for Modules A + B (Module C +$5K optional), volume-capped retainer tiers, and the Safari Ventures architecture proof — all in the proposal.
               </p>
               <a
                 href={PROPOSAL_URL}
